@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="unqualified">
+     
+
+<xs:element name="carrera" type="xs:Carrera"/> 
+     
+    <xs:complexType name="Carrera">
+    	<xs:sequence>
+    		<xs:element name="tarjetaCredito" type="xs:string" />
+    		<xs:element name="origen" type="xs:string" />
+    		<xs:element name="destino" type="xs:string" />
+    		<xs:element name="distancia" type="xs:double" />
+    		<xs:element name="tiempoEsperadoMinutos" type="xs:int" />
+    		<xs:element name="tiempoCarrera" type="xs:int"/>
+    		<xs:element name="costeEsperado" type="xs:double"/>
+    		<xs:element name="costeTotal" type="xs:double"/>
+    		<xs:element name="propina" type="xs:int"/>
+    		<xs:element name="conductor" type="xs:Conductor"/>
+    	</xs:sequence>
+    </xs:complexType>
+       
+    <xs:complexType name="Conductor">
+    	<xs:sequence>
+    		<xs:element name="nombre" type="xs:string"/>
+    		<xs:element name="matricula" type="xs:string"/>
+    		<xs:element name="modelo" type="xs:string"/>
+    		<xs:element name="valoraciones" type="xs:valoracionesList"/>
+    		<xs:element name="ocupado" type="xs:boolean"/>
+    		<xs:element name="valoracionMedia" type="xs:double"/>
+    	</xs:sequence>
+ 	</xs:complexType>
+ 	
+ 	<xs:simpleType name="valoracionesList">
+	 	   <xs:list itemtype="xs:byte"/>
+ 	</xs:simpleType>
+    
+</xs:schema>
